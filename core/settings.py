@@ -14,7 +14,11 @@ SECRET_KEY = "django-insecure-8167a&$45i2@pp=pqsrxh9vb_4#h3c#lm^3yg1%zvr!jh6d1&2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']  # or specifically your codespaces domain
 
 
 # Application definition
